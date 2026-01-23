@@ -65,13 +65,14 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            padding: 80px 5% 100px;
-            background: radial-gradient(circle at top right, #eef6ff 0%, #ffffff 100%);
+            padding: 100px 5% 120px;
+            background: var(--primary); 
             text-align: center;
+            color: white; 
         }
 
         .hero span.badge { 
-            color: var(--primary); 
+            color: var(--secondary); 
             font-weight: 700; 
             text-transform: uppercase; 
             font-size: 0.75rem; 
@@ -81,13 +82,23 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             line-height: 1.1;
             margin-bottom: 20px;
             font-weight: 800;
+            color: #ffffff; 
         }
 
-        .hero h1 span { color: var(--primary); }
+        .hero h1 span { 
+            color: var(--secondary); 
+        }
+
+        .hero p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
 
         /* --- PRICING SECTION --- */
         .pricing { padding: 80px 5%; background: #fff; text-align: center; }
@@ -108,6 +119,12 @@
             display: flex;
             flex-direction: column;
             transition: 0.4s;
+            margin-bottom: 20px;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
         }
 
         .price-card.featured { background: var(--dark); color: white; position: relative; border: none; }
@@ -132,14 +149,18 @@
         }
 
         /* --- BUTTONS --- */
-        .btn-wa { background: var(--whatsapp); color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; text-align: center; transition: 0.3s; }
-        .btn-wa:hover { filter: brightness(1.1); }
+        .btn-wa { background: var(--whatsapp); color: white; padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; text-align: center; transition: 0.3s; display: block; }
+        .btn-wa:hover { filter: brightness(1.1); transform: scale(1.02); }
         .btn-insta-outline { display: inline-block; margin-top: 15px; color: var(--instagram); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
 
         /* --- FLOATING WA --- */
-        .floating-wa { position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; text-decoration: none; font-size: 30px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); }
+        .floating-wa { position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 9999; text-decoration: none; font-size: 30px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); transition: 0.3s; }
+        .floating-wa:hover { transform: scale(1.1); }
 
-        @media (max-width: 768px) { .nav-links { display: none; } }
+        @media (max-width: 768px) { 
+            .nav-links { display: none; } 
+            .hero { padding: 60px 5% 80px; }
+        }
     </style>
 </head>
 <body>
@@ -165,7 +186,7 @@
     <section class="pricing" id="pricing">
         <div class="section-title" style="margin-bottom: 40px;">
             <h2 style="font-size: 2.5rem; font-weight: 800;">Layanan Kami</h2>
-            <p style="color: var(--gray);">Deep Clean Cuma 20k!</p>
+            <p style="color: var(--gray);">Perawatan Terbaik Untuk Koleksi Anda</p>
         </div>
         
         <div class="price-container">
@@ -199,6 +220,42 @@
                 <a href="https://wa.me/6285185926986?text=Halo%20Cleanskad,%20saya%20mau%20order%20Unyellowing" class="btn-wa">Pesan via WA</a>
                 <a href="https://instagram.com/cleanskad._" class="btn-insta-outline">Tanya di Instagram</a>
             </div>
+
+            <div class="price-card">
+                <h3>Hat / Topi</h3>
+                <div class="price-box">
+                    <span class="new-price">Rp 8k</span>
+                </div>
+                <a href="https://wa.me/6285185926986?text=Halo%20Cleanskad,%20saya%20mau%20order%20Cuci%20Topi" class="btn-wa">Pesan via WA</a>
+                <a href="https://instagram.com/cleanskad._" class="btn-insta-outline">Tanya di Instagram</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Totebag</h3>
+                <div class="price-box">
+                    <span class="new-price">Rp 10k</span>
+                </div>
+                <a href="https://wa.me/6285185926986?text=Halo%20Cleanskad,%20saya%20mau%20order%20Cuci%20Totebag" class="btn-wa">Pesan via WA</a>
+                <a href="https://instagram.com/cleanskad._" class="btn-insta-outline">Tanya di Instagram</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Backpack Reguler</h3>
+                <div class="price-box">
+                    <span class="new-price">Rp 35k</span>
+                </div>
+                <a href="https://wa.me/6285185926986?text=Halo%20Cleanskad,%20saya%20mau%20order%20Backpack%20Reguler" class="btn-wa">Pesan via WA</a>
+                <a href="https://instagram.com/cleanskad._" class="btn-insta-outline">Tanya di Instagram</a>
+            </div>
+
+            <div class="price-card">
+                <h3>Backpack Deep</h3>
+                <div class="price-box">
+                    <span class="new-price">Rp 40k</span>
+                </div>
+                <a href="https://wa.me/6285185926986?text=Halo%20Cleanskad,%20saya%20mau%20order%20Backpack%20Deep" class="btn-wa">Pesan via WA</a>
+                <a href="https://instagram.com/cleanskad._" class="btn-insta-outline">Tanya di Instagram</a>
+            </div>
         </div>
     </section>
 
@@ -211,7 +268,7 @@
             <p style="color: var(--dark); margin-bottom: 30px;">Jl. Halmahera No.15, Kaliwungu, Kec. Jombang, Jawa Timur 61419</p>
             
             <div style="display: flex; flex-direction: column; gap: 10px;">
-                <a href="https://maps.google.com/?q=Cleanskad+(cuci+sepatu+Jombang)+Jl.+Halmahera+No.15" target="_blank" class="btn-wa" style="background: var(--primary);">
+                <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Halmahera+No.15,+Kaliwungu,+Jombang" target="_blank" class="btn-wa" style="background: var(--primary);">
                     Buka Petunjuk Jalan (Google Maps)
                 </a>
                 <a href="https://instagram.com/cleanskad._" target="_blank" class="btn-wa" style="background: var(--instagram);">
